@@ -1,55 +1,62 @@
 class City:
     def __init__(self, name: str, region: str, country: str, population: int, postal_code: str, phone_code: str):
-        self._name = name
-        self._region = region
-        self._country = country
-        self._population = population
-        self._postal_code = postal_code
-        self._phone_code = phone_code
+        self._name = None
+        self._region = None
+        self._country = None
+        self._population = None
+        self._postal_code = None
+        self._phone_code = None
+
+        self.name = name
+        self.region = region
+        self.country = country
+        self.population = population
+        self.postal_code = postal_code
+        self.phone_code = phone_code
 
     @property
     def name(self) -> str:
         return self._name
 
-    @property
-    def region(self) -> str:
-        return self._region
-
-    @property
-    def country(self) -> str:
-        return self._country
-
-    @property
-    def population(self) -> int:
-        return self._population
-
-    @property
-    def postal_code(self) -> str:
-        return self._postal_code
-
-    @property
-    def phone_code(self) -> str:
-        return self._phone_code
-
     @name.setter
     def name(self, value: str):
         self._name = value
+
+    @property
+    def region(self) -> str:
+        return self._region
 
     @region.setter
     def region(self, value: str):
         self._region = value
 
+    @property
+    def country(self) -> str:
+        return self._country
+
     @country.setter
     def country(self, value: str):
         self._country = value
+
+    @property
+    def population(self) -> int:
+        return self._population
 
     @population.setter
     def population(self, value: int):
         self._population = value
 
+    @property
+    def postal_code(self) -> str:
+        return self._postal_code
+
     @postal_code.setter
     def postal_code(self, value: str):
         self._postal_code = value
+
+    @property
+    def phone_code(self) -> str:
+        return self._phone_code
 
     @phone_code.setter
     def phone_code(self, value: str):
@@ -58,56 +65,63 @@ class City:
 
 class Country:
     def __init__(self, name: str, continent: str, population: int, phone_code: str, capital: str):
-        self._name = name
-        self._continent = continent
-        self._population = population
-        self._phone_code = phone_code
-        self._capital = capital
-        self._cities = []
+        self._name = None
+        self._continent = None
+        self._population = None
+        self._phone_code = None
+        self._capital = None
+        self._cities = None
+
+        self.name = name
+        self.continent = continent
+        self.population = population
+        self.phone_code = phone_code
+        self.capital = capital
+        self.cities = []
 
     @property
     def name(self) -> str:
         return self._name
 
-    @property
-    def continent(self) -> str:
-        return self._continent
-
-    @property
-    def population(self) -> int:
-        return self._population
-
-    @property
-    def phone_code(self) -> str:
-        return self._phone_code
-
-    @property
-    def capital(self) -> str:
-        return self._capital
-
-    @property
-    def cities(self) -> list:
-        return self._cities
-
     @name.setter
     def name(self, value: str):
         self._name = value
+
+    @property
+    def continent(self) -> str:
+        return self._continent
 
     @continent.setter
     def continent(self, value: str):
         self._continent = value
 
+    @property
+    def population(self) -> int:
+        return self._population
+
     @population.setter
     def population(self, value: int):
         self._population = value
+
+    @property
+    def phone_code(self) -> str:
+        return self._phone_code
 
     @phone_code.setter
     def phone_code(self, value: str):
         self._phone_code = value
 
+    @property
+    def capital(self) -> str:
+        return self._capital
+
     @capital.setter
     def capital(self, value: str):
         self._capital = value
+
+    @property
+    def cities(self) -> list:
+        return self._cities
 
     @cities.setter
     def cities(self, value: list):
@@ -137,4 +151,5 @@ print(f"Столиця: {country.capital}")
 
 print("\nМіста в країні:")
 for city in country.cities:
-    print(f"- {city.name}, Населення: {city.population}, Поштовий індекс: {city.postal_code}, Телефонний код: {city.phone_code}")
+    print(
+        f"- {city.name}, Населення: {city.population}, Поштовий індекс: {city.postal_code}, Телефонний код: {city.phone_code}")
