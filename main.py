@@ -20,7 +20,10 @@ class City:
 
     @name.setter
     def name(self, value: str):
-        self._name = value
+        if isinstance(value, str) and len(value) > 0:
+            self._name = value
+        else:
+            raise ValueError("Назва міста повинна бути непорожнім рядком")
 
     @property
     def region(self) -> str:
@@ -28,7 +31,10 @@ class City:
 
     @region.setter
     def region(self, value: str):
-        self._region = value
+        if isinstance(value, str) and len(value) > 0:
+            self._region = value
+        else:
+            raise ValueError("Назва регіону повинна бути непорожнім рядком")
 
     @property
     def country(self) -> str:
@@ -36,7 +42,10 @@ class City:
 
     @country.setter
     def country(self, value: str):
-        self._country = value
+        if isinstance(value, str) and len(value) > 0:
+            self._country = value
+        else:
+            raise ValueError("Назва країни повинна бути непорожнім рядком")
 
     @property
     def population(self) -> int:
@@ -44,7 +53,10 @@ class City:
 
     @population.setter
     def population(self, value: int):
-        self._population = value
+        if isinstance(value, int) and value >= 0:
+            self._population = value
+        else:
+            raise ValueError("Населення повинно бути не від'ємним цілим числом")
 
     @property
     def postal_code(self) -> str:
@@ -52,7 +64,10 @@ class City:
 
     @postal_code.setter
     def postal_code(self, value: str):
-        self._postal_code = value
+        if isinstance(value, str) and len(value) > 0:
+            self._postal_code = value
+        else:
+            raise ValueError("Поштовий індекс повинен бути непорожнім рядком")
 
     @property
     def phone_code(self) -> str:
@@ -60,7 +75,10 @@ class City:
 
     @phone_code.setter
     def phone_code(self, value: str):
-        self._phone_code = value
+        if isinstance(value, str) and len(value) > 0:
+            self._phone_code = value
+        else:
+            raise ValueError("Телефонний код повинен бути непорожнім рядком")
 
 
 class Country:
@@ -85,7 +103,10 @@ class Country:
 
     @name.setter
     def name(self, value: str):
-        self._name = value
+        if isinstance(value, str) and len(value) > 0:
+            self._name = value
+        else:
+            raise ValueError("Назва країни повинна бути непорожнім рядком")
 
     @property
     def continent(self) -> str:
@@ -93,7 +114,10 @@ class Country:
 
     @continent.setter
     def continent(self, value: str):
-        self._continent = value
+        if isinstance(value, str) and len(value) > 0:
+            self._continent = value
+        else:
+            raise ValueError("Назва континенту повинна бути непорожнім рядком")
 
     @property
     def population(self) -> int:
@@ -101,7 +125,10 @@ class Country:
 
     @population.setter
     def population(self, value: int):
-        self._population = value
+        if isinstance(value, int) and value >= 0:
+            self._population = value
+        else:
+            raise ValueError("Населення повинно бути не від'ємним цілим числом")
 
     @property
     def phone_code(self) -> str:
@@ -109,7 +136,10 @@ class Country:
 
     @phone_code.setter
     def phone_code(self, value: str):
-        self._phone_code = value
+        if isinstance(value, str) and len(value) > 0:
+            self._phone_code = value
+        else:
+            raise ValueError("Телефонний код повинен бути непорожнім рядком")
 
     @property
     def capital(self) -> str:
@@ -117,7 +147,8 @@ class Country:
 
     @capital.setter
     def capital(self, value: str):
-        self._capital = value
+        if isinstance(value, str) and len(value) > 0:
+            self._capital = value
 
     @property
     def cities(self) -> list:
