@@ -1,5 +1,5 @@
 class City:
-    def __init__(self, name, region, country, population, postal_code, phone_code):
+    def __init__(self, name: str, region: str, country: str, population: int, postal_code: str, phone_code: str):
         self._name = name
         self._region = region
         self._country = country
@@ -7,27 +7,57 @@ class City:
         self._postal_code = postal_code
         self._phone_code = phone_code
 
-    def get_name(self):
+    @property
+    def name(self) -> str:
         return self._name
 
-    def get_region(self):
+    @property
+    def region(self) -> str:
         return self._region
 
-    def get_country(self):
+    @property
+    def country(self) -> str:
         return self._country
 
-    def get_population(self):
+    @property
+    def population(self) -> int:
         return self._population
 
-    def get_postal_code(self):
+    @property
+    def postal_code(self) -> str:
         return self._postal_code
 
-    def get_phone_code(self):
+    @property
+    def phone_code(self) -> str:
         return self._phone_code
+
+    @name.setter
+    def name(self, value: str):
+        self._name = value
+
+    @region.setter
+    def region(self, value: str):
+        self._region = value
+
+    @country.setter
+    def country(self, value: str):
+        self._country = value
+
+    @population.setter
+    def population(self, value: int):
+        self._population = value
+
+    @postal_code.setter
+    def postal_code(self, value: str):
+        self._postal_code = value
+
+    @phone_code.setter
+    def phone_code(self, value: str):
+        self._phone_code = value
 
 
 class Country:
-    def __init__(self, name, continent, population, phone_code, capital):
+    def __init__(self, name: str, continent: str, population: int, phone_code: str, capital: str):
         self._name = name
         self._continent = continent
         self._population = population
@@ -35,29 +65,59 @@ class Country:
         self._capital = capital
         self._cities = []
 
-    def get_name(self):
+    @property
+    def name(self) -> str:
         return self._name
 
-    def get_continent(self):
+    @property
+    def continent(self) -> str:
         return self._continent
 
-    def get_population(self):
+    @property
+    def population(self) -> int:
         return self._population
 
-    def get_phone_code(self):
+    @property
+    def phone_code(self) -> str:
         return self._phone_code
 
-    def get_capital(self):
+    @property
+    def capital(self) -> str:
         return self._capital
 
-    def get_cities(self):
+    @property
+    def cities(self) -> list:
         return self._cities
 
-    def add_city(self, city):
+    @name.setter
+    def name(self, value: str):
+        self._name = value
+
+    @continent.setter
+    def continent(self, value: str):
+        self._continent = value
+
+    @population.setter
+    def population(self, value: int):
+        self._population = value
+
+    @phone_code.setter
+    def phone_code(self, value: str):
+        self._phone_code = value
+
+    @capital.setter
+    def capital(self, value: str):
+        self._capital = value
+
+    @cities.setter
+    def cities(self, value: list):
+        self._cities = value
+
+    def add_city(self, city: City):
         self._cities.append(city)
 
-    def remove_city(self, city_name):
-        self._cities = [city for city in self._cities if city.get_name() != city_name]
+    def remove_city(self, city_name: str):
+        self._cities = [city for city in self._cities if city.name != city_name]
 
 
 # Приклад використання
@@ -71,10 +131,10 @@ country = Country("Україна", "Європа", 42000000, "+380", "Київ"
 country.add_city(city1)
 country.add_city(city2)
 
-print(f"Назва країни: {country.get_name()}")
-print(f"Кількість жителів: {country.get_population()}")
-print(f"Столиця: {country.get_capital()}")
+print(f"Назва країни: {country.name}")
+print(f"Кількість жителів: {country.population}")
+print(f"Столиця: {country.capital}")
 
 print("\nМіста в країні:")
-for city in country.get_cities():
-    print(f"- {city.get_name()}, Населення: {city.get_population()}, Поштовий індекс: {city.get_postal_code()}, Телефонний код: {city.get_phone_code()}")
+for city in country.cities:
+    print(f"- {city.name}, Населення: {city.population}, Поштовий індекс: {city.postal_code}, Телефонний код: {city.phone_code}")
